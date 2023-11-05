@@ -42,7 +42,6 @@ struct navigationView: View {
                     Button("Filtrar datos"){}
                 }
             }
-            
         }
     }
 }

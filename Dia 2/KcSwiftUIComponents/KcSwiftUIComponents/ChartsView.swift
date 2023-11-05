@@ -17,7 +17,6 @@ struct Values: Identifiable {
     let color: Color
 }
 
-
 struct ChartsView: View {
     
     var vals : [Values] = [

@@ -17,7 +17,6 @@ struct IpadView: View {
                 .navigationSplitViewColumnWidth(500)
         } detail: {
             //detalle
-            
             Text(selectedHero ?? "Selecciona un heroe")
         }
     }

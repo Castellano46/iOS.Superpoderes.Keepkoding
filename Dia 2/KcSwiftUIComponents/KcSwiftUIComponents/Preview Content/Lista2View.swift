@@ -13,7 +13,6 @@ struct Hero: Identifiable {
     let name: String
 }
 
-
 struct Lista2View: View {
     
     let heros = [

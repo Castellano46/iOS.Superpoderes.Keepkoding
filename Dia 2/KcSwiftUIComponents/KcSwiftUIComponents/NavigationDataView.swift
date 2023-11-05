@@ -13,9 +13,6 @@ struct Scores: Identifiable, Hashable {
     let published: Bool
 }
 
-
-
-
 struct NavigationDataView: View {
     
     var scores: [Scores] = [
@@ -24,14 +21,12 @@ struct NavigationDataView: View {
         Scores(title: "Return of the Jedi", published: false)
     ]
     
-    
     var body: some View {
         NavigationStack{
             
             NavigationLink(value: 1) {
                 HStack{
                     Text("navega por Int")
-                    
                 }
             }
             
@@ -44,7 +39,6 @@ struct NavigationDataView: View {
                             Image(systemName: score.published ? "music.mic.circle.fill": "music.mic.circle")
                         }
                     }
-                   
                 }
             }
             .navigationTitle("Navegar por datos")
@@ -67,14 +61,11 @@ struct NavigationDataView: View {
                 }
             }
             
-            
             NavigationLink(value: 0) {
                 HStack{
                     Text("navega por Int == 0")
-                    
                 }
             }
-            
         }
     }
 }

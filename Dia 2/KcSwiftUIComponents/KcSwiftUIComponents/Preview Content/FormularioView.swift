@@ -16,7 +16,6 @@ struct FormularioView: View {
     private var categories = ["Programador", "Analista", "Full Stack"]
     @State var selectedCategory = "Analista"
     
-    
     var body: some View {
         NavigationStack{
             Form(){

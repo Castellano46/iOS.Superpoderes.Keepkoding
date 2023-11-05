@@ -12,8 +12,6 @@ struct DetailModalView: View {
     @Binding var showDetail: Bool
     @Environment(\.presentationMode) private var presentationMode
     
-    
-    
     var body: some View {
         VStack{
             Text("Soy el modal....")
