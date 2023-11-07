@@ -1,14 +1,14 @@
 //
-//  MultiplataformaApp.swift
-//  Multiplataforma
+//  watchOSApp.swift
+//  watchOS Watch App
 //
-//  Created by Pedro on 4/11/23.
+//  Created by Pedro on 6/11/23.
 //
 
 import SwiftUI
 
 @main
-struct kcMultiplataforma2023App: App {
+struct watchOS_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
