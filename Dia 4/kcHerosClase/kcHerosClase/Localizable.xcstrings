@@ -1,0 +1,69 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "¿No tienes cuenta?" : {
+
+    },
+    "%@" : {
+
+    },
+    "Add Item" : {
+
+    },
+    "Cerrar session" : {
+
+    },
+    "Entrar" : {
+
+    },
+    "Heroes" : {
+
+    },
+    "Item at %@" : {
+
+    },
+    "Lista de Heroes" : {
+
+    },
+    "Lista heroes" : {
+
+    },
+    "Password" : {
+
+    },
+    "Por favor espere..." : {
+
+    },
+    "Registro" : {
+
+    },
+    "Select an item" : {
+
+    },
+    "Test" : {
+      "comment" : "Localizable.strings\n  kcHerosClase\n\n  Created by Pedro on 7/11/23.",
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test ENG"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test ESP"
+          }
+        }
+      }
+    },
+    "Usuario" : {
+
+    },
+    "Volver" : {
+
+    }
+  },
+  "version" : "1.0"
+}
