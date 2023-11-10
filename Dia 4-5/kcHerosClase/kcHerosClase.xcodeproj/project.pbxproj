@@ -15,6 +15,11 @@
 		EB822D1E2AFD541400A88166 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB822D1D2AFD541400A88166 /* PropertyWrappers.swift */; };
 		EB822D202AFD545800A88166 /* HerosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB822D1F2AFD545800A88166 /* HerosModel.swift */; };
 		EB822D222AFD54F700A88166 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB822D212AFD54F700A88166 /* LoginView.swift */; };
+		EB8D428F2AFE217800B6C811 /* DevelopersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D428E2AFE217800B6C811 /* DevelopersView.swift */; };
+		EB8D42912AFE21B400B6C811 /* HeroesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D42902AFE21B400B6C811 /* HeroesRowView.swift */; };
+		EB8D42932AFE21D800B6C811 /* HeroesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D42922AFE21D800B6C811 /* HeroesDetailView.swift */; };
+		EB8D42952AFE22A800B6C811 /* ViewModelDevelopers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D42942AFE22A800B6C811 /* ViewModelDevelopers.swift */; };
+		EB8D42972AFE232F00B6C811 /* DeveloperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D42962AFE232F00B6C811 /* DeveloperModel.swift */; };
 		EBF0A8A72AFAB54900155763 /* kcHerosClaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8A62AFAB54900155763 /* kcHerosClaseApp.swift */; };
 		EBF0A8A92AFAB54900155763 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8A82AFAB54900155763 /* Persistence.swift */; };
 		EBF0A8AC2AFAB54900155763 /* kcHerosClase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8AA2AFAB54900155763 /* kcHerosClase.xcdatamodeld */; };
@@ -59,6 +64,11 @@
 		EB822D1D2AFD541400A88166 /* PropertyWrappers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
 		EB822D1F2AFD545800A88166 /* HerosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosModel.swift; sourceTree = "<group>"; };
 		EB822D212AFD54F700A88166 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EB8D428E2AFE217800B6C811 /* DevelopersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopersView.swift; sourceTree = "<group>"; };
+		EB8D42902AFE21B400B6C811 /* HeroesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesRowView.swift; sourceTree = "<group>"; };
+		EB8D42922AFE21D800B6C811 /* HeroesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDetailView.swift; sourceTree = "<group>"; };
+		EB8D42942AFE22A800B6C811 /* ViewModelDevelopers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDevelopers.swift; sourceTree = "<group>"; };
+		EB8D42962AFE232F00B6C811 /* DeveloperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperModel.swift; sourceTree = "<group>"; };
 		EBF0A8A32AFAB54900155763 /* kcHerosClase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kcHerosClase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF0A8A62AFAB54900155763 /* kcHerosClaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kcHerosClaseApp.swift; sourceTree = "<group>"; };
 		EBF0A8A82AFAB54900155763 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -119,6 +129,7 @@
 		EB822D112AFD52E600A88166 /* Principal */ = {
 			isa = PBXGroup;
 			children = (
+				EB8D428D2AFE215400B6C811 /* Developers */,
 				EB822D182AFD538800A88166 /* Heroes */,
 				EB822D162AFD537D00A88166 /* PrincipalView.swift */,
 			);
@@ -129,8 +140,18 @@
 			isa = PBXGroup;
 			children = (
 				EB822D192AFD539C00A88166 /* HeroesView.swift */,
+				EB8D42902AFE21B400B6C811 /* HeroesRowView.swift */,
+				EB8D42922AFE21D800B6C811 /* HeroesDetailView.swift */,
 			);
 			path = Heroes;
+			sourceTree = "<group>";
+		};
+		EB8D428D2AFE215400B6C811 /* Developers */ = {
+			isa = PBXGroup;
+			children = (
+				EB8D428E2AFE217800B6C811 /* DevelopersView.swift */,
+			);
+			path = Developers;
 			sourceTree = "<group>";
 		};
 		EBF0A89A2AFAB54900155763 = {
@@ -212,6 +233,7 @@
 			children = (
 				EBF0A8EF2AFACD9600155763 /* StatusModel.swift */,
 				EB822D1F2AFD545800A88166 /* HerosModel.swift */,
+				EB8D42962AFE232F00B6C811 /* DeveloperModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +260,7 @@
 			children = (
 				EBF0A8ED2AFAC1AB00155763 /* RootViewModel.swift */,
 				EB822D1B2AFD53D900A88166 /* viewModelHeros.swift */,
+				EB8D42942AFE22A800B6C811 /* ViewModelDevelopers.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -404,16 +427,21 @@
 				EBF0A8F02AFACD9600155763 /* StatusModel.swift in Sources */,
 				EB822D1E2AFD541400A88166 /* PropertyWrappers.swift in Sources */,
 				EBF0A8F22AFACE9F00155763 /* BaseNetwork.swift in Sources */,
+				EB8D42912AFE21B400B6C811 /* HeroesRowView.swift in Sources */,
 				EB822D1C2AFD53D900A88166 /* viewModelHeros.swift in Sources */,
 				EBF0A8EE2AFAC1AB00155763 /* RootViewModel.swift in Sources */,
+				EB8D428F2AFE217800B6C811 /* DevelopersView.swift in Sources */,
 				EBF0A8EC2AFABC9C00155763 /* KeyChain.swift in Sources */,
 				EBF0A8AC2AFAB54900155763 /* kcHerosClase.xcdatamodeld in Sources */,
 				EBF0A8AE2AFAB54900155763 /* ContentView.swift in Sources */,
+				EB8D42952AFE22A800B6C811 /* ViewModelDevelopers.swift in Sources */,
 				EB822D222AFD54F700A88166 /* LoginView.swift in Sources */,
+				EB8D42972AFE232F00B6C811 /* DeveloperModel.swift in Sources */,
 				EB822D172AFD537D00A88166 /* PrincipalView.swift in Sources */,
 				EB822D132AFD533C00A88166 /* LoaderView.swift in Sources */,
 				EBF0A8DE2AFAB6C400155763 /* RootView.swift in Sources */,
 				EB822D202AFD545800A88166 /* HerosModel.swift in Sources */,
+				EB8D42932AFE21D800B6C811 /* HeroesDetailView.swift in Sources */,
 				EBF0A8A92AFAB54900155763 /* Persistence.swift in Sources */,
 				EB822D152AFD535400A88166 /* ErrorView.swift in Sources */,
 			);

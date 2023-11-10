@@ -12,17 +12,19 @@ struct PrincipalView: View {
     
     var body: some View {
        TabView{
+           
             VStack{
-                Text("Lista heroes")
-                Button(action: {
-                    rootViewModel.CloseSession()
-                }, label: {
-                    Text("Cerrar session")
-                })
+                HeroesView(viewModel: viewModelHeros())
             }
             .tabItem {
                 Image(systemName: "house")
                 Text("Heroes")
+            }
+           
+           DevelopersView(viewModel: ViewModelDevelopers())
+               .tabItem {
+                   Image(systemName: "person")
+                   Text("Developer")
             }
         }
     }

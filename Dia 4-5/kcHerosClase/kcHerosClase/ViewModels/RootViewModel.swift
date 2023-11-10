@@ -14,6 +14,8 @@ final class RootViewModel: ObservableObject {
     @Published var status = Status.none //estado
     var isLogged : Bool = false //indica si esta o no logado el usuario
     
+    @Published var bootcamps: [Bootcamp]? //bootcamps de keepcoding
+    
     //token de login
     /*
     @Published var tokenJWT: String = "" {
@@ -27,7 +29,6 @@ final class RootViewModel: ObservableObject {
             } else{
                 isLogged = false
             }
-            
         }
     }
      */
@@ -35,17 +36,23 @@ final class RootViewModel: ObservableObject {
     @kcPersistenceKeyChain(key: CONST_TOKEN_ID)
     var tokenJWT{
         didSet{
-            print("token login \(tokenJWT)")
+           // print("token login \(tokenJWT)")
         }
     }
-    
     
     //combine
     var suscriptors = Set<AnyCancellable>()
     
     //inicializador
-    init(){
+    init(testing: Bool = false){
         self.LogedUserControl() //control de su esta ya logado
+        
+        //Cargamos los bootcamos sin estamos en modo testing o diseño
+        if(!testing){
+            self.loadBootcamps()
+        } else {
+            loadBootcampsTesting() //Design mode
+        }
     }
     
     ///Cierre de session
@@ -103,5 +110,44 @@ final class RootViewModel: ObservableObject {
             }
             .store(in: &suscriptors)
     }
+
+    func loadBootcamps(){
+        URLSession.shared
+            .dataTaskPublisher(for: BaseNetwork().getSessionBootCamps())
+            .tryMap{
+                //evaluamos si es 200, sino lo es Exception. Si es 200 pues devilvemos el JSON que es el data
+                guard let response = $0.response as? HTTPURLResponse,
+                      response.statusCode == 200 else {
+                    //error
+                    throw URLError(.badServerResponse)
+                }
+                
+                //Todo OK. Devuelvo Data
+                return $0.data
+            }
+            .decode(type: [Bootcamp].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion{
+                case .failure:
+                    self.status = .error(error: "Error buscando bootcamps")
+                case .finished:
+                    self.status = .loaded //Success
+                }
+            } receiveValue: { data in
+                self.bootcamps = data
+            }
+            .store(in: &suscriptors)
+    }
     
+    //Disñeo UI
+    func loadBootcampsTesting(){
+        let b1 = Bootcamp(id: "01", name: "boot Mobile 1")
+        let b2 = Bootcamp(id: "02", name: "boot Mobile 2")
+        let b3 = Bootcamp(id: "03", name: "boot Mobile 3")
+        let b4 = Bootcamp(id: "04", name: "boot Mobile 4")
+        
+        //signarlos al modelo
+        self.bootcamps = [b1, b2, b3, b4]
+    }
 }

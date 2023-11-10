@@ -24,6 +24,8 @@ struct HTTPMethods {
 enum endpoints: String {
     case login = "/api/auth/login"
     case herosList = "/api/heros/all"
+    case developerList = "/api/data/developers"
+    case bootcampsList = "/api/data/bootcamps"
 }
 
 
@@ -46,7 +48,6 @@ struct BaseNetwork {
         request.addValue(sefCredential, forHTTPHeaderField: "Authorization")
         
         return request
-        
     }
     
     //montamos el request de heroes
@@ -69,4 +70,29 @@ struct BaseNetwork {
         return request
     }
     
+    //montamos el request de Developers
+    func getSessionDevelopers() -> URLRequest{
+        let urlCad = "\(server)\(endpoints.developerList.rawValue)"
+        
+        var request: URLRequest = URLRequest(url: URL(string: urlCad)!)
+        request.httpMethod = HTTPMethods.get
+        
+        //seguridad JWT
+        let tokenOptional = loadKC(key: CONST_TOKEN_ID)
+        if let tokenJWT = tokenOptional {
+            request.addValue("Bearer \(tokenJWT)", forHTTPHeaderField: "Authorization")
+        }
+        
+        return request
+    }
+    
+    //montamos el request deBootcamps
+    func getSessionBootCamps() -> URLRequest{
+        let urlCad = "\(server)\(endpoints.bootcampsList.rawValue)"
+        
+        var request: URLRequest = URLRequest(url: URL(string: urlCad)!)
+        request.httpMethod = HTTPMethods.get
+        
+        return request
+    }
 }

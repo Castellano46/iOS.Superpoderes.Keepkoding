@@ -10,7 +10,13 @@
     "Add Item" : {
 
     },
-    "Cerrar session" : {
+    "Buscar Heroes..." : {
+
+    },
+    "close" : {
+
+    },
+    "Developer" : {
 
     },
     "Entrar" : {
@@ -19,13 +25,13 @@
     "Heroes" : {
 
     },
+    "Heros" : {
+
+    },
     "Item at %@" : {
 
     },
-    "Lista de Heroes" : {
-
-    },
-    "Lista heroes" : {
+    "NO hay datos" : {
 
     },
     "Password" : {
