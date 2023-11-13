@@ -53,21 +53,36 @@ struct DevelopersView: View {
                                                     .padding()
                                             }
 
+                                            
                                             //nombre
                                             Text("\(dataRow.name)")
+                                            
                                         }
                                         .onTapGesture(count: 2) {
                                             let _ = print("\(dataRow.name)")
                                         }
+                                        
                                     }
                                 }
+                                
                             }
+                            
                         }
+                        
+                        
+                        
+                        
+                        
                     }
+                    
+                    
                 }
+                
+                
             } else {
                 Text("NO hay datos")
-            }  
+            }
+             
         }
     }
 }

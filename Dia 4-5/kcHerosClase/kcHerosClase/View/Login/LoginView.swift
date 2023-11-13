@@ -32,8 +32,14 @@ struct LoginView: View {
                 .background(.black)
                 .opacity(0.2)
             
+            
+            
             //Image(.logo)
+            
+            
             VStack{
+        
+                
                 //logo Dragon Ball
                 Image(.title)
                     .resizable()
@@ -42,6 +48,8 @@ struct LoginView: View {
                     .padding(.top, 160)
                 
                 Spacer()
+                
+                
                 //usuario y clave
                 VStack{
                    TextField("Usuario", text: $email)
@@ -67,9 +75,11 @@ struct LoginView: View {
                         .padding(.top, 20)
                         .id(2) //for testing
                     
+                    
                     //BOTon del login
                     Button(action: {
                         rootViewModel.login(user: email, password: password)
+                        
                         
                     }, label: {
                         Text("Entrar")
@@ -84,6 +94,8 @@ struct LoginView: View {
                     .padding(.top, 50)
                     .opacity(0.8)
                     .id(3)
+                    
+                    
                 }
                 .padding([.leading, .trailing], 20)
                 
@@ -103,9 +115,16 @@ struct LoginView: View {
                     })
                 }
                 .padding(.bottom, 40)
+                
             }
         }
         .ignoresSafeArea()
+        
+        
+        
+        
+        
+        
     }
 }
 

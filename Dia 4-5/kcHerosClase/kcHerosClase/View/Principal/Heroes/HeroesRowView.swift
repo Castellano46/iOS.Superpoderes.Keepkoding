@@ -26,6 +26,8 @@ struct HeroesRowView: View {
                     .cornerRadius(20)
                     .opacity(0.8)
             }
+
+            
             
             //VStack para nombre y "me gusta"
             VStack(alignment: .leading){
@@ -55,6 +57,7 @@ struct HeroesRowView: View {
                         .frame(width: 40, height: 40)
                         .padding([.leading], 10)
                 }
+                
             }
         }
     }

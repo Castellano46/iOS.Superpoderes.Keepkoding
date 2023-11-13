@@ -53,6 +53,8 @@ final class ViewModelDevelopers: ObservableObject {
             .store(in: &suscriptors)
     }
     
+    
+    
     func getDevelopersTesting(boots:[Bootcamp]){
     
         //Creo 2 bootcamps
@@ -60,6 +62,7 @@ final class ViewModelDevelopers: ObservableObject {
         let b2 = Bootcamp(id: boots[1].id, name: boots[1].name)
         
         //Creo varios developers
+        
         
         let d1 = DeveloperModel(apell1: "Bustos1", apell2: "Esteban", id: "0101", email: "jlbustos1@keepcoding.es", photo: "https://media-exp1.licdn.com/dms/image/C5603AQFAargIfS-A4A/profile-displayphoto-shrink_200_200/0/1517710838821?e=1626912000&v=beta&t=wZ2Km9X6nWEOWo95Fu58D14OvIMdwhXtiOzQe4QIaVc", name: "Manuel", bootcamp: b1, heros: [])
         
@@ -70,6 +73,7 @@ final class ViewModelDevelopers: ObservableObject {
         let d4 = DeveloperModel(apell1: "Bustos4", apell2: "Esteban", id: "0104", email: "jlbustos1@keepcoding.es", photo: "https://media-exp1.licdn.com/dms/image/C5603AQFAargIfS-A4A/profile-displayphoto-shrink_200_200/0/1517710838821?e=1626912000&v=beta&t=wZ2Km9X6nWEOWo95Fu58D14OvIMdwhXtiOzQe4QIaVc", name: "Ana maria", bootcamp: b2, heros: [])
         
         self.developers = [d1,d2,d3,d4]
-    }
-}
 
+    }
+    
+}

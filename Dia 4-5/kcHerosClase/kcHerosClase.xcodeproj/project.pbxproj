@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB7470572B027F1A00E764AD /* HerosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7470562B027F1A00E764AD /* HerosInteractor.swift */; };
+		EB7470592B027F8C00E764AD /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7470582B027F8C00E764AD /* Networker.swift */; };
+		EB74705B2B027FB900E764AD /* Constantes_desa.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74705A2B027FB900E764AD /* Constantes_desa.swift */; };
+		EB74705D2B027FD500E764AD /* Constantes_prod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74705C2B027FD500E764AD /* Constantes_prod.swift */; };
+		EB74705F2B02804000E764AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB74705E2B02804000E764AD /* ContentView.swift */; };
+		EB7470622B02815E00E764AD /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = EB7470612B02815E00E764AD /* ViewInspector */; };
 		EB822D132AFD533C00A88166 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB822D122AFD533C00A88166 /* LoaderView.swift */; };
 		EB822D152AFD535400A88166 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB822D142AFD535400A88166 /* ErrorView.swift */; };
 		EB822D172AFD537D00A88166 /* PrincipalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB822D162AFD537D00A88166 /* PrincipalView.swift */; };
@@ -23,7 +29,6 @@
 		EBF0A8A72AFAB54900155763 /* kcHerosClaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8A62AFAB54900155763 /* kcHerosClaseApp.swift */; };
 		EBF0A8A92AFAB54900155763 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8A82AFAB54900155763 /* Persistence.swift */; };
 		EBF0A8AC2AFAB54900155763 /* kcHerosClase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8AA2AFAB54900155763 /* kcHerosClase.xcdatamodeld */; };
-		EBF0A8AE2AFAB54900155763 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8AD2AFAB54900155763 /* ContentView.swift */; };
 		EBF0A8B02AFAB54A00155763 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF0A8AF2AFAB54A00155763 /* Assets.xcassets */; };
 		EBF0A8B42AFAB54A00155763 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBF0A8B32AFAB54A00155763 /* Preview Assets.xcassets */; };
 		EBF0A8BE2AFAB54A00155763 /* kcHerosClaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF0A8BD2AFAB54A00155763 /* kcHerosClaseTests.swift */; };
@@ -56,6 +61,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB7470562B027F1A00E764AD /* HerosInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosInteractor.swift; sourceTree = "<group>"; };
+		EB7470582B027F8C00E764AD /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		EB74705A2B027FB900E764AD /* Constantes_desa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes_desa.swift; sourceTree = "<group>"; };
+		EB74705C2B027FD500E764AD /* Constantes_prod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes_prod.swift; sourceTree = "<group>"; };
+		EB74705E2B02804000E764AD /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB822D122AFD533C00A88166 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		EB822D142AFD535400A88166 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		EB822D162AFD537D00A88166 /* PrincipalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalView.swift; sourceTree = "<group>"; };
@@ -73,7 +83,6 @@
 		EBF0A8A62AFAB54900155763 /* kcHerosClaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kcHerosClaseApp.swift; sourceTree = "<group>"; };
 		EBF0A8A82AFAB54900155763 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EBF0A8AB2AFAB54900155763 /* kcHerosClase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kcHerosClase.xcdatamodel; sourceTree = "<group>"; };
-		EBF0A8AD2AFAB54900155763 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EBF0A8AF2AFAB54A00155763 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBF0A8B12AFAB54A00155763 /* kcHerosClase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kcHerosClase.entitlements; sourceTree = "<group>"; };
 		EBF0A8B32AFAB54A00155763 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -97,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF0A8E22AFAB8C900155763 /* KeychainSwift in Frameworks */,
+				EB7470622B02815E00E764AD /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB7470552B027EFD00E764AD /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				EB7470562B027F1A00E764AD /* HerosInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
 		EB822D102AFD52D900A88166 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +240,7 @@
 		EBF0A8D62AFAB61700155763 /* old */ = {
 			isa = PBXGroup;
 			children = (
-				EBF0A8AD2AFAB54900155763 /* ContentView.swift */,
+				EB74705E2B02804000E764AD /* ContentView.swift */,
 				EBF0A8A82AFAB54900155763 /* Persistence.swift */,
 			);
 			path = old;
@@ -242,6 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				EBF0A8F12AFACE9F00155763 /* BaseNetwork.swift */,
+				EB7470582B027F8C00E764AD /* Networker.swift */,
+				EB74705A2B027FB900E764AD /* Constantes_desa.swift */,
+				EB74705C2B027FD500E764AD /* Constantes_prod.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -258,6 +279,7 @@
 		EBF0A8DA2AFAB67800155763 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EB7470552B027EFD00E764AD /* interactor */,
 				EBF0A8ED2AFAC1AB00155763 /* RootViewModel.swift */,
 				EB822D1B2AFD53D900A88166 /* viewModelHeros.swift */,
 				EB8D42942AFE22A800B6C811 /* ViewModelDevelopers.swift */,
@@ -302,6 +324,7 @@
 			name = kcHerosClase;
 			packageProductDependencies = (
 				EBF0A8E12AFAB8C900155763 /* KeychainSwift */,
+				EB7470612B02815E00E764AD /* ViewInspector */,
 			);
 			productName = kcHerosClase;
 			productReference = EBF0A8A32AFAB54900155763 /* kcHerosClase.app */;
@@ -378,6 +401,7 @@
 			mainGroup = EBF0A89A2AFAB54900155763;
 			packageReferences = (
 				EBF0A8E02AFAB8C900155763 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				EB7470602B02815E00E764AD /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = EBF0A8A42AFAB54900155763 /* Products */;
 			projectDirPath = "";
@@ -425,16 +449,20 @@
 				EB822D1A2AFD539C00A88166 /* HeroesView.swift in Sources */,
 				EBF0A8A72AFAB54900155763 /* kcHerosClaseApp.swift in Sources */,
 				EBF0A8F02AFACD9600155763 /* StatusModel.swift in Sources */,
+				EB7470572B027F1A00E764AD /* HerosInteractor.swift in Sources */,
 				EB822D1E2AFD541400A88166 /* PropertyWrappers.swift in Sources */,
 				EBF0A8F22AFACE9F00155763 /* BaseNetwork.swift in Sources */,
 				EB8D42912AFE21B400B6C811 /* HeroesRowView.swift in Sources */,
 				EB822D1C2AFD53D900A88166 /* viewModelHeros.swift in Sources */,
 				EBF0A8EE2AFAC1AB00155763 /* RootViewModel.swift in Sources */,
 				EB8D428F2AFE217800B6C811 /* DevelopersView.swift in Sources */,
+				EB74705F2B02804000E764AD /* ContentView.swift in Sources */,
 				EBF0A8EC2AFABC9C00155763 /* KeyChain.swift in Sources */,
+				EB74705B2B027FB900E764AD /* Constantes_desa.swift in Sources */,
+				EB7470592B027F8C00E764AD /* Networker.swift in Sources */,
 				EBF0A8AC2AFAB54900155763 /* kcHerosClase.xcdatamodeld in Sources */,
-				EBF0A8AE2AFAB54900155763 /* ContentView.swift in Sources */,
 				EB8D42952AFE22A800B6C811 /* ViewModelDevelopers.swift in Sources */,
+				EB74705D2B027FD500E764AD /* Constantes_prod.swift in Sources */,
 				EB822D222AFD54F700A88166 /* LoginView.swift in Sources */,
 				EB8D42972AFE232F00B6C811 /* DeveloperModel.swift in Sources */,
 				EB822D172AFD537D00A88166 /* PrincipalView.swift in Sources */,
@@ -804,6 +832,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EB7470602B02815E00E764AD /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
 		EBF0A8E02AFAB8C900155763 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -815,6 +851,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EB7470612B02815E00E764AD /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB7470602B02815E00E764AD /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
 		EBF0A8E12AFAB8C900155763 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EBF0A8E02AFAB8C900155763 /* XCRemoteSwiftPackageReference "keychain-swift" */;

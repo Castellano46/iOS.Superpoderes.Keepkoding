@@ -10,6 +10,7 @@ import Combine
 
 public let CONST_TOKEN_ID = "TokenJWTAppiOSBoot17"
 
+
 final class RootViewModel: ObservableObject {
     @Published var status = Status.none //estado
     var isLogged : Bool = false //indica si esta o no logado el usuario
@@ -29,6 +30,7 @@ final class RootViewModel: ObservableObject {
             } else{
                 isLogged = false
             }
+            
         }
     }
      */
@@ -39,6 +41,7 @@ final class RootViewModel: ObservableObject {
            // print("token login \(tokenJWT)")
         }
     }
+    
     
     //combine
     var suscriptors = Set<AnyCancellable>()
@@ -76,7 +79,10 @@ final class RootViewModel: ObservableObject {
         if tokenJWT != ""{
             status = .loaded
         }
+        
     }
+    
+    
     
     //Login al servidor
     func login(user:String , password: String){
@@ -109,8 +115,10 @@ final class RootViewModel: ObservableObject {
                 self.tokenJWT = token
             }
             .store(in: &suscriptors)
+      
     }
-
+    
+    
     func loadBootcamps(){
         URLSession.shared
             .dataTaskPublisher(for: BaseNetwork().getSessionBootCamps())
@@ -140,6 +148,7 @@ final class RootViewModel: ObservableObject {
             .store(in: &suscriptors)
     }
     
+    
     //Disñeo UI
     func loadBootcampsTesting(){
         let b1 = Bootcamp(id: "01", name: "boot Mobile 1")
@@ -149,5 +158,8 @@ final class RootViewModel: ObservableObject {
         
         //signarlos al modelo
         self.bootcamps = [b1, b2, b3, b4]
+        
     }
+    
+    
 }

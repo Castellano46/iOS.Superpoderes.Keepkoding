@@ -13,8 +13,10 @@ struct PrincipalView: View {
     var body: some View {
        TabView{
            
+            
             VStack{
                 HeroesView(viewModel: viewModelHeros())
+               
             }
             .tabItem {
                 Image(systemName: "house")
@@ -25,8 +27,9 @@ struct PrincipalView: View {
                .tabItem {
                    Image(systemName: "person")
                    Text("Developer")
-            }
+               }
         }
+        
     }
 }
 

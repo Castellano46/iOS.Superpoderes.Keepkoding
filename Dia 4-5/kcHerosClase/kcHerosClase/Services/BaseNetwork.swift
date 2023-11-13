@@ -7,8 +7,7 @@
 
 import Foundation
 
-//constantes.
-let server = "https://dragonball.keepcoding.education"
+
 
 //structs de metodos de red
 
@@ -48,6 +47,7 @@ struct BaseNetwork {
         request.addValue(sefCredential, forHTTPHeaderField: "Authorization")
         
         return request
+        
     }
     
     //montamos el request de heroes
@@ -70,12 +70,14 @@ struct BaseNetwork {
         return request
     }
     
+    
     //montamos el request de Developers
     func getSessionDevelopers() -> URLRequest{
         let urlCad = "\(server)\(endpoints.developerList.rawValue)"
         
         var request: URLRequest = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.get
+        
         
         //seguridad JWT
         let tokenOptional = loadKC(key: CONST_TOKEN_ID)
@@ -86,6 +88,7 @@ struct BaseNetwork {
         return request
     }
     
+    
     //montamos el request deBootcamps
     func getSessionBootCamps() -> URLRequest{
         let urlCad = "\(server)\(endpoints.bootcampsList.rawValue)"
@@ -95,4 +98,6 @@ struct BaseNetwork {
         
         return request
     }
+    
+    
 }
