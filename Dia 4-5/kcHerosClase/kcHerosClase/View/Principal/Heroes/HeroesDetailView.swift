@@ -11,11 +11,10 @@ struct HeroesDetailView: View {
     var hero: Heros
     //@ObservedObject var viewModelHeros: viewModelHeros
     
-    
     var body: some View {
         VStack{
             HStack{
-                //name
+                // Name
                 Text(hero.name)
                     .bold()
                     .font(.title)
@@ -38,13 +37,13 @@ struct HeroesDetailView: View {
                             .padding([.leading], 10)
                     }
                 })
-                //Me gusta
+                // Me gusta
             }
             .padding([.leading, .trailing], 10)
             
-            //Foto del heroe
+            // Foto del héroe
             AsyncImage(url: URL(string: hero.photo)) { photo in
-                //foto descargada
+                // Foto descargada
                 photo
                     .resizable()
                     .cornerRadius(20)
@@ -58,12 +57,10 @@ struct HeroesDetailView: View {
                     .opacity(0.8)
             }
             
-            //Description
+            // Description
             Text(hero.description)
                 .foregroundStyle(.gray)
                 .font(.caption)
-            
-            
         }
     }
 }

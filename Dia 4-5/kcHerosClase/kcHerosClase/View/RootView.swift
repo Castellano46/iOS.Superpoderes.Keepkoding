@@ -10,13 +10,12 @@ import SwiftUI
 struct RootView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
     
-    
     var body: some View {
-        //Status Box or ViewRouter
+        // Status Box or ViewRouter
         switch rootViewModel.status{
         case Status.none:
             withAnimation {
-                LoginView() //login
+                LoginView() // Login
             }
         case .register:
                 Text("Registro")
@@ -31,7 +30,7 @@ struct RootView: View {
             }
         case .loaded:
             withAnimation {
-                PrincipalView() //la home de la app
+                PrincipalView() // Home de la app
             }
         }
     }

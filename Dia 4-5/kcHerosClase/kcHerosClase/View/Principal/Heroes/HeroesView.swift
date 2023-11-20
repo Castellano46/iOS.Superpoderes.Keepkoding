@@ -21,7 +21,7 @@ struct HeroesView: View {
                             //Destino
                             HeroesDetailView(hero: data)
                         } label: {
-                            //La celda personalizada
+                            // Celda personalizada
                             HeroesRowView(hero: data)
                                 .frame(height: 200)
                         }
@@ -32,7 +32,7 @@ struct HeroesView: View {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        //close session
+                        // Close session
                         viewModelRoot.CloseSession()
                     }, label: {
                         HStack{
@@ -48,7 +48,7 @@ struct HeroesView: View {
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: "Buscar Heroes...")
         .onChange(of: filter) { oldValue, newValue in
-            //Ha cambiado el filtro de busqueda
+            // Ha cambiado el filtro de búsqueda
             viewModel.getHeros(filter: newValue)
         }
     }

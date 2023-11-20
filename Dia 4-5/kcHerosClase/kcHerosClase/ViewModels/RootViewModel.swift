@@ -12,10 +12,10 @@ public let CONST_TOKEN_ID = "TokenJWTAppiOSBoot17"
 
 
 final class RootViewModel: ObservableObject {
-    @Published var status = Status.none //estado
-    var isLogged : Bool = false //indica si esta o no logado el usuario
+    @Published var status = Status.none // Estado
+    var isLogged : Bool = false // Indica si está o no logado el usuario
     
-    @Published var bootcamps: [Bootcamp]? //bootcamps de keepcoding
+    @Published var bootcamps: [Bootcamp]? // Bootcamps de keepcoding
     
     //token de login
     /*
@@ -30,7 +30,6 @@ final class RootViewModel: ObservableObject {
             } else{
                 isLogged = false
             }
-            
         }
     }
      */
@@ -42,15 +41,13 @@ final class RootViewModel: ObservableObject {
         }
     }
     
-    
-    //combine
+    // Combine
     var suscriptors = Set<AnyCancellable>()
     
-    //inicializador
     init(testing: Bool = false){
-        self.LogedUserControl() //control de su esta ya logado
+        self.LogedUserControl() // Control para saber si esta logado
         
-        //Cargamos los bootcamos sin estamos en modo testing o diseño
+        // Cargamos los bootcamos si estamos en modo testing o diseño
         if(!testing){
             self.loadBootcamps()
         } else {
@@ -58,13 +55,13 @@ final class RootViewModel: ObservableObject {
         }
     }
     
-    ///Cierre de session
+    // Cierre de sesión
     func CloseSession(){
         tokenJWT = ""
         status = .none
     }
     
-    //Control de usuario conectado.
+    // Control de usuario conectado.
     func LogedUserControl(){
       /*
         let tokenOptional = loadKC(key: CONST_TOKEN_ID) //LEEMOS EL TOJKEN del KeyChain
@@ -79,12 +76,9 @@ final class RootViewModel: ObservableObject {
         if tokenJWT != ""{
             status = .loaded
         }
-        
     }
     
-    
-    
-    //Login al servidor
+    // Login al servidor
     func login(user:String , password: String){
         
         status = .loading
@@ -92,19 +86,19 @@ final class RootViewModel: ObservableObject {
         URLSession.shared
             .dataTaskPublisher(for: BaseNetwork().getSessionLogin(user: user, password: password))
             .tryMap{
-                //evaluamos si es 200, sino lo es Exception. Si es 200 pues devilvemos el JSON que es el data
+                // Evaluamos si es 200, sino lo es Exception. Si es 200 devolvemos el JSON que es data
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
-                    //error
+                    // Error
                     throw URLError(.badServerResponse)
                 }
                 
-                //Todo OK. convierto Data -> Cadena usando codificacion utf8
+                // Todo OK. convierto Data -> Cadena usando codificacion utf8
                 return String(decoding: $0.data, as: UTF8.self)
             }
-            .receive(on: DispatchQueue.main) //hilo principal
+            .receive(on: DispatchQueue.main) // Hilo principal
             .sink { completion in
-                //evakluacion la respuesta
+                // Evaluación de la respuesta
                 switch completion{
                 case .failure:
                     self.status = .error(error: "Usuario y/o clave erronea") //LogiN Error
@@ -115,22 +109,20 @@ final class RootViewModel: ObservableObject {
                 self.tokenJWT = token
             }
             .store(in: &suscriptors)
-      
     }
-    
     
     func loadBootcamps(){
         URLSession.shared
             .dataTaskPublisher(for: BaseNetwork().getSessionBootCamps())
             .tryMap{
-                //evaluamos si es 200, sino lo es Exception. Si es 200 pues devilvemos el JSON que es el data
+                // Evaluamos si es 200, sino lo es Exception. Si es 200 devolvemos el JSON que es data
                 guard let response = $0.response as? HTTPURLResponse,
                       response.statusCode == 200 else {
-                    //error
+                    // Error
                     throw URLError(.badServerResponse)
                 }
                 
-                //Todo OK. Devuelvo Data
+                // Todo OK. Devuelvo Data
                 return $0.data
             }
             .decode(type: [Bootcamp].self, decoder: JSONDecoder())
@@ -140,26 +132,21 @@ final class RootViewModel: ObservableObject {
                 case .failure:
                     self.status = .error(error: "Error buscando bootcamps")
                 case .finished:
-                    self.status = .loaded //Success
+                    self.status = .loaded // Success
                 }
             } receiveValue: { data in
                 self.bootcamps = data
             }
             .store(in: &suscriptors)
     }
-    
-    
-    //Disñeo UI
+        
+    // Disñeo UI
     func loadBootcampsTesting(){
         let b1 = Bootcamp(id: "01", name: "boot Mobile 1")
         let b2 = Bootcamp(id: "02", name: "boot Mobile 2")
         let b3 = Bootcamp(id: "03", name: "boot Mobile 3")
         let b4 = Bootcamp(id: "04", name: "boot Mobile 4")
         
-        //signarlos al modelo
         self.bootcamps = [b1, b2, b3, b4]
-        
     }
-    
-    
 }

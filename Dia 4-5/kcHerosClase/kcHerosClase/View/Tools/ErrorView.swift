@@ -26,7 +26,6 @@ struct ErrorView: View {
                 .padding()
                 .id(0)
             
-            
             Text("\(textError)")
                 .font(.title2)
                 .foregroundStyle(.red)
@@ -36,9 +35,9 @@ struct ErrorView: View {
             
             Spacer()
             
-            //boton
+            // Botón
             Button(action: {
-                //accion.
+                // Acción.
                 rootViewModel.status = .none //volvemos al login
             }, label: {
                 Text("Volver")
@@ -49,11 +48,8 @@ struct ErrorView: View {
                     .background(.orange)
                     .cornerRadius(20)
                     .shadow(radius: 10, x: 20, y: 10)
-                
             })
             .id(2)
-            
-            
         }
     }
 }

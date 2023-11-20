@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-//llamadas de red con genericos + Combine
+// Llamadas de red con genericos + Combine
 
 protocol NetworkerProtocol: AnyObject {
     func callServer<T>(type: T.Type, request: URLRequest) -> AnyPublisher< T, Error> where T: Decodable
@@ -30,9 +30,5 @@ final class NetWorker: NetworkerProtocol {
             .decode(type: T.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
-        
     }
-    
-    
-    
 }

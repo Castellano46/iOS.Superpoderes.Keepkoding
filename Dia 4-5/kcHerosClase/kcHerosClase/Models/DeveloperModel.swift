@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Bootcamp: Codable, Identifiable{
     let id, name: String
 }

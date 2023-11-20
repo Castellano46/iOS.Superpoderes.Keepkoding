@@ -7,5 +7,5 @@
 
 import Foundation
 
-//constantes.
+// Constantes.
 let server = "https://dragonball.keepcoding.education"

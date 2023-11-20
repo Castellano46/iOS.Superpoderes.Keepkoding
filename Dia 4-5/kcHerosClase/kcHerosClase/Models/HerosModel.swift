@@ -12,11 +12,15 @@ struct Heros: Codable, Identifiable{
     var id: UUID
     var name: String
     var description: String
-    var photo: String //es una URL
-    var favorite: Bool? //el usuario conecado, marca como favorito un heroes
+    var photo: String // Es una URL
+    var favorite: Bool? // El usuario conecado, marca como favorito un héoe
+    
+    func getFullName() -> String {
+        return "BB \(name)"
+    }
 }
 
-//para la request, necesito enviar el nombre del heroe.
+// Para la request, necesito enviar el nombre del heroe.
 
 struct HerosFilter: Codable {
     var name: String

@@ -9,14 +9,15 @@ import SwiftUI
 
 @main
 struct kcHerosClaseApp: App {
-    let persistenceController = PersistenceController.shared   // core data
+    let persistenceController = PersistenceController.shared //Core Data
     
-    //View model global
+    //ViewMOdel global
     @StateObject var rootViewModel = RootViewModel()
+    
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(rootViewModel)
         }

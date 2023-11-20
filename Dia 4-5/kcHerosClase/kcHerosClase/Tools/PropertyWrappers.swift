@@ -7,8 +7,7 @@
 
 import Foundation
 
-//persistencia en keyChain
-
+// Persistencia en keyChain
 @propertyWrapper
 class kcPersistenceKeyChain {
     private var key: String
@@ -18,7 +17,7 @@ class kcPersistenceKeyChain {
     }
     
     var wrappedValue: String {
-        //leen tu propiedad
+        // Leen tu propiedad
         get{
             if let value = loadKC(key: key){
                 return value
@@ -27,9 +26,9 @@ class kcPersistenceKeyChain {
             }
         }
         
-        //te asignan valor.
+        // Asignan valor.
         set{
-            //Grabar
+            // Grabar
             saveKC(key: key, value: newValue)
         }
     }

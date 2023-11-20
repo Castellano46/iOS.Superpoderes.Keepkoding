@@ -20,7 +20,6 @@ func saveKC(key: String , value:String) -> Bool {
     }
 }
 
-
 //Leemos del keychain
 func loadKC(key: String) -> String? {
     if let data = KeychainSwift().get(key){

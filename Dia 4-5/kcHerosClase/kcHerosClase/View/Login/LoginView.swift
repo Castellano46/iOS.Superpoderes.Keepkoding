@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    //pilla la instancia del environment
+    // Coge la instancia del environment
     @EnvironmentObject var rootViewModel: RootViewModel
     
 #if DEBUG
@@ -21,26 +21,21 @@ struct LoginView: View {
     
     var body: some View {
         ZStack{
-            //imagen de fondo
+            // Imagen de fondo
             Image(decorative: "backgroundLogin")
                 .resizable()
                 .opacity(1)
             
-            //Capa oscurecer imagen
+            // Capa oscurecer imagen
             Image(decorative: "")
                 .resizable()
                 .background(.black)
                 .opacity(0.2)
-            
-            
-            
-            //Image(.logo)
-            
-            
+
+            // Image(.logo)
+
             VStack{
-        
-                
-                //logo Dragon Ball
+                // Logo Dragon Ball
                 Image(.title)
                     .resizable()
                     .scaledToFit()
@@ -48,9 +43,8 @@ struct LoginView: View {
                     .padding(.top, 160)
                 
                 Spacer()
-                
-                
-                //usuario y clave
+
+                // Usuario y clave
                 VStack{
                    TextField("Usuario", text: $email)
                         .padding()
@@ -75,12 +69,9 @@ struct LoginView: View {
                         .padding(.top, 20)
                         .id(2) //for testing
                     
-                    
-                    //BOTon del login
+                    // Botón del login
                     Button(action: {
                         rootViewModel.login(user: email, password: password)
-                        
-                        
                     }, label: {
                         Text("Entrar")
                             .font(.title)
@@ -94,14 +85,11 @@ struct LoginView: View {
                     .padding(.top, 50)
                     .opacity(0.8)
                     .id(3)
-                    
-                    
                 }
                 .padding([.leading, .trailing], 20)
-                
                 Spacer()
                 
-                //Link del registro
+                // Link del registro
                 HStack{
                     Text("¿No tienes cuenta?")
                         .foregroundStyle(.white)
@@ -115,16 +103,9 @@ struct LoginView: View {
                     })
                 }
                 .padding(.bottom, 40)
-                
             }
         }
         .ignoresSafeArea()
-        
-        
-        
-        
-        
-        
     }
 }
 

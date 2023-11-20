@@ -7,9 +7,7 @@
 
 import Foundation
 
-
-
-//structs de metodos de red
+// structs de metodos de red
 
 struct HTTPMethods {
     static let post = "POST"
@@ -27,10 +25,9 @@ enum endpoints: String {
     case bootcampsList = "/api/data/bootcamps"
 }
 
-
 struct BaseNetwork {
     
-    //monta la request del login
+    // Monta la request del login
     func getSessionLogin(user: String, password: String) -> URLRequest {
         let urlCad = "\(server)\(endpoints.login.rawValue)"
         let encodeCredentials = "\(user):\(password)".data(using: .utf8)?.base64EncodedString()
@@ -40,28 +37,27 @@ struct BaseNetwork {
             sefCredential = "Basic \(credentials)"
         }
         
-        //Creamos la request
+        // Creamos la request
         var request: URLRequest = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.post
         request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
         request.addValue(sefCredential, forHTTPHeaderField: "Authorization")
         
         return request
-        
     }
     
-    //montamos el request de heroes
+    // Montamos el request de héroes
     func getSessionHero(filter: String) -> URLRequest{
         let urlCad = "\(server)\(endpoints.herosList.rawValue)"
         
         var request: URLRequest = URLRequest(url: URL(string: urlCad)!)
         request.httpMethod = HTTPMethods.post
         
-        //generamos el JSON y lo metemos en el body de la llamada
+        // Generamos el JSON y lo metemos en el body de la llamada
         request.httpBody = try? JSONEncoder().encode(HerosFilter(name: filter))
         request.addValue(HTTPMethods.content, forHTTPHeaderField: "Content-type")
         
-        //seguridad JWT
+        // Seguridad JWT
         let tokenOptional = loadKC(key: CONST_TOKEN_ID)
         if let tokenJWT = tokenOptional {
             request.addValue("Bearer \(tokenJWT)", forHTTPHeaderField: "Authorization")
@@ -70,8 +66,7 @@ struct BaseNetwork {
         return request
     }
     
-    
-    //montamos el request de Developers
+    // Montamos el request de Developers
     func getSessionDevelopers() -> URLRequest{
         let urlCad = "\(server)\(endpoints.developerList.rawValue)"
         
@@ -79,7 +74,7 @@ struct BaseNetwork {
         request.httpMethod = HTTPMethods.get
         
         
-        //seguridad JWT
+        // Seguridad JWT
         let tokenOptional = loadKC(key: CONST_TOKEN_ID)
         if let tokenJWT = tokenOptional {
             request.addValue("Bearer \(tokenJWT)", forHTTPHeaderField: "Authorization")
@@ -88,8 +83,7 @@ struct BaseNetwork {
         return request
     }
     
-    
-    //montamos el request deBootcamps
+    // Montamos el request deBootcamps
     func getSessionBootCamps() -> URLRequest{
         let urlCad = "\(server)\(endpoints.bootcampsList.rawValue)"
         
@@ -98,6 +92,4 @@ struct BaseNetwork {
         
         return request
     }
-    
-    
 }

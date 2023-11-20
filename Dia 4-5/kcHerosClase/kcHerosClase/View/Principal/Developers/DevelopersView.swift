@@ -17,27 +17,27 @@ struct DevelopersView: View {
                let devs = viewModel.developers{
                 
                 ForEach(boots){ boot in
-                    //filtrar por developers de bootcamp
+                    // Filtrar por developers de bootcamp
                     let devsBoot = devs.filter({$0.bootcamp.id == boot.id})
                     
                     if devsBoot.count > 0 {
                         VStack(alignment: .leading){
-                            //titulo
+                            // Título
                             Text(boot.name)
                                 .font(.title)
                                 .foregroundStyle(.orange)
                                 .bold()
                             
-                            //Lista tipo netflix
+                            // Lista tipo netflix
                             ScrollView(.horizontal, showsIndicators: false){
                                 LazyHStack{
                                     ForEach(devsBoot){ dataRow in
                                         
                                         let _ = print("\(dataRow.id)")
                                         
-                                        //subView
+                                        // subView
                                         VStack{
-                                            //foto
+                                            // Foto
                                             AsyncImage(url: URL(string: dataRow.photo)) { photo in
                                                 
                                                 photo
@@ -46,56 +46,33 @@ struct DevelopersView: View {
                                                     .cornerRadius(50)
                                                     .padding()
                                             } placeholder: {
-                                                //place holder
+                                                // Place holder
                                                 Image(systemName: "person")
                                                     .resizable()
                                                     .frame(width: 100, height: 100)
                                                     .padding()
                                             }
 
-                                            
-                                            //nombre
+                                            // Nombre
                                             Text("\(dataRow.name)")
-                                            
                                         }
                                         .onTapGesture(count: 2) {
                                             let _ = print("\(dataRow.name)")
                                         }
-                                        
                                     }
                                 }
-                                
                             }
-                            
                         }
-                        
-                        
-                        
-                        
-                        
                     }
-                    
-                    
                 }
-                
-                
             } else {
                 Text("NO hay datos")
             }
-             
         }
     }
 }
 
  #Preview {
- //declare cositas...
- 
  DevelopersView(viewModel: ViewModelDevelopers(testing: true, boots: RootViewModel(testing: true).bootcamps!))
  .environmentObject(RootViewModel(testing: true))
- 
  }
-
-
-
-
-
